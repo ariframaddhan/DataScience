@@ -68,7 +68,7 @@ def heart():
     if st.sidebar.button('Predict!'):
         df = input_df
         st.write(df)
-        moodel= model_heart_disease
+        loaded_model = model_heart_disease()
         prediction = loaded_model.predict(df)        
         result = ['No Heart Disease' if prediction == 0 else 'Yes Heart Disease']
         st.subheader('Prediction: ')
