@@ -9,7 +9,11 @@ st.write("""
 # Latihan DQLAB """
 
 )
-
+def model_heart_disease()
+        with open("output_decision_tree.pkl", 'rb') as file:  
+            loaded_model = pickle.load(file)
+        return model_heart_disease
+            
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Iris species!", "Heart Disease!"))
 
 def heart():
@@ -64,8 +68,7 @@ def heart():
     if st.sidebar.button('Predict!'):
         df = input_df
         st.write(df)
-        with open("output_decision_tree.pkl", 'rb') as file:  
-            loaded_model = pickle.load(file)
+        moodel= model_heart_disease
         prediction = loaded_model.predict(df)        
         result = ['No Heart Disease' if prediction == 0 else 'Yes Heart Disease']
         st.subheader('Prediction: ')
