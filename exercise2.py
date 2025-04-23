@@ -9,7 +9,7 @@ st.write("""
 # Latihan DQLAB """
 
 )
-def model_heart_disease()
+def model_heart_disease():
         with open("output_decision_tree.pkl", 'rb') as file:  
             loaded_model = pickle.load(file)
         return model_heart_disease
