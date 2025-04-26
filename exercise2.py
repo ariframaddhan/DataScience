@@ -10,16 +10,17 @@ st.write("""# Latihan DQLAB""")
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Iris species!", "Heart Disease!"))
 
 def heart():
+    with open("output_decision_tree.pkl", 'rb') as file:
+            loaded_model = pickle.load(file) 
     st.write("""
     This app predicts the **Heart Disease**
-    with open("output_decision_tree.pkl", 'rb') as file:
-            loaded_model = pickle.load(file)       
+          
     Data obtained from the [Heart Disease dataset](https://archive.ics.uci.edu/dataset/45/heart+disease) by UCIML.
     """)
-
+    
     st.sidebar.header('User Input Features:')
     uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-
+    
     if uploaded_file is not None:
         input_df = pd.read_csv(uploaded_file)
     else:
