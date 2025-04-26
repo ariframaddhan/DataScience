@@ -100,10 +100,6 @@ def heart_disease():
             st.success(f"Prediksi yang dihasilkan adalah: {output}")
 
 if use_case == "Iris Species":
-    st.write("""
-    Ini adalah aplikasi yang dapat memprediksi spesies bunga iris berdasarkan data yang diberikan. 
-    Silahkan masukkan data yang diperlukan pada samping ini
-    """)
     st.sidebar.title("Input Data")
 elif use_case == "Heart Disease":
     heart_disease()
