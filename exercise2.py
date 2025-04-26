@@ -63,17 +63,6 @@ def heart():
 
         input_df = user_input_features()
             
-    # ⬇️ Prediction only happens if 'Predict!' is clicked
-    if st.sidebar.button('Predict!'):
-        st.write("Input data:")
-        st.write(input_df)
-        prediction = loaded_model.predict(input_df)
-        result = 'No Heart Disease' if prediction[0] == 0 else 'Yes Heart Disease'
-
-        st.subheader('Prediction:')
-        with st.spinner('Wait for it...'):
-            time.sleep(2)
-            st.success(f"Prediction: {result}")
 
 # Placeholder for Iris model
 def iris():
