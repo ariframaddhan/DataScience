@@ -8,7 +8,7 @@ st.set_page_config(page_title="Halaman Modelling", layout="wide")
 st.write("""# Latihan DQLAB""")
 
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Iris species!", "Heart Disease!"))
-    with open("output_decision_tree.pkl", 'rb') as file:
+with open("output_decision_tree.pkl", 'rb') as file:
             loaded_model = pickle.load(file) 
 def heart():
     st.write("""
