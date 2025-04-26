@@ -9,7 +9,7 @@ st.write("""# Latihan DQLAB""")
 
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Iris species!", "Heart Disease!"))
 with open("output_decision_tree.pkl", 'rb') as file:
-             loaded_model = pickle.load(file)
+loaded_model = pickle.load(file)
 def heart():
     st.write("""
     This app predicts the **Heart Disease**
