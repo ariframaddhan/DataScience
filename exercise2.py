@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 import pickle
 import time
-from sklearn.tree import DecisionTreeClassifier
-from PIL import Image
+
 
 st.set_page_config(page_title="Halaman Modelling", layout="wide")
 st.write("""# Latihan DQLAB""")
 
 add_selectitem = st.sidebar.selectbox("Want to open about?", ("Iris species!", "Heart Disease!"))
-
+with open("output_decision_tree.pkl", 'rb') as file:
+             loaded_model = pickle.load(file)
 def heart():
     st.write("""
     This app predicts the **Heart Disease**
@@ -67,14 +67,6 @@ def heart():
     if st.sidebar.button('Predict!'):
         st.write("Input data:")
         st.write(input_df)
-
-        try:
-            with open("output_decision_tree.pkl", 'rb') as file:
-                loaded_model = pickle.load(file)
-        except Exception as e:
-            st.error(f"❌ Failed to load model: {e}")
-            return
-
         prediction = loaded_model.predict(input_df)
         result = 'No Heart Disease' if prediction[0] == 0 else 'Yes Heart Disease'
 
