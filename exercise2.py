@@ -6,7 +6,12 @@ from PIL import Image
 
 # Konfigurasi halaman dan judul
 st.set_page_config(page_title="Latihan DQlab Academy", layout="wide", initial_sidebar_state="auto")
+st.write("""
+# Latihan DQlab Academy
 
+Website ini dibuat oleh : [Budi Setiawan](https://www.linkedin.com/in/budi-setiawan-1a0b4a1b6/) dan 
+[Dimas Prasetyo](https://www.linkedin.com/in/dimas-prasetyo-2a3b5a1b6/) untuk memenuhi tugas akhir dari DQlab Academy.
+""")
 
 # Memanggil model yang sudah dilatih
 with open("output_decision_tree.pkl", "rb") as file:
@@ -84,6 +89,8 @@ def heart_disease():
         st.sidebar.write("Dibawah adalah inputan data manual")
         input_data = input_user_heart_disease()
 
+    # show image heart disease
+    st.image("heart-disease.jpg", caption="Heart Disease")
     if st.sidebar.button("Go!"):
         df = input_data
         st.write("Data yang dimasukkan:")
